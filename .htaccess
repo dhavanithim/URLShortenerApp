@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# If file or directory does NOT exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route to the correct location
+RewriteRule ^(.+)$ shorten/redirect.php?code=$1 [QSA,L]
