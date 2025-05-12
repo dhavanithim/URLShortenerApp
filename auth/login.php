@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $query = "SELECT * FROM users WHERE email = ?";
     $stmt = $pdo->prepare($query);
     $stmt->bindParam(1, $email, PDO::PARAM_STR);
-    $stmt->execute();
+    $stmt->execute(); 
+
     
     // Check if user exists
     if ($stmt->rowCount() > 0) {
